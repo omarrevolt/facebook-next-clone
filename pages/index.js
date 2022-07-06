@@ -3,7 +3,6 @@ import { Auth } from '../context/AuthContext'
 
 export default function Home() {
 	const { logout, user } = Auth()
-	console.log(user)
 	return (
 		<>
 			<Head>
@@ -12,8 +11,8 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div className='font-openSans'>
-				<button onClick={logout}>out!</button>
+			<div>
+				<button onClick={logout}>logout</button>
 			</div>
 		</>
 	)

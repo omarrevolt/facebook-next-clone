@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import LogForm from '../components/LogForm'
+import LogForm from './LogForm'
 
 const login = () => {
 	return (

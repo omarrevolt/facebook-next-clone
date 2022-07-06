@@ -1,10 +1,9 @@
 import '../styles/globals.css'
-import Auth from '../components/Auth'
+import Auth from '../components/Auth/Auth'
 import { AuthContextProvider } from '../context/AuthContext'
-import { auth, db } from '../firebaseConfig'
+import { auth } from '../firebaseConfig'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
-import { useEffect } from 'react'
+import Header from '../components/Header/Header'
 function MyApp({ Component, pageProps }) {
 	const [user, loading] = useAuthState(auth)
 	if (loading) return 'loading...'
@@ -17,7 +16,10 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<AuthContextProvider>
-			<Component {...pageProps} />
+			<Header />
+			<main className='bg-secondary font-openSans'>
+				<Component {...pageProps} />
+			</main>
 		</AuthContextProvider>
 	)
 }
